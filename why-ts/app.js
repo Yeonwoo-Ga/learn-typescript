@@ -8,16 +8,40 @@ var address = document.querySelector("#address");
 
 // user data
 var user = {};
+/**
+ * @typedef{object} Address
+ * @property {string} street
+ * @property {string} city
+ */
+
+/**
+ * @typedef {object} User
+ * @property {string} name
+ * @property {string} email
+ * @property {Address} address
+ */
+/**
+ * @returns {Promise<User>}
+ *
+ */
+//js doc의 기본 문법
+function fetchUser() {
+  return axios.get(url);
+}
+
+fetchUser().then(function (response) {
+  console.log(response);
+  response.address.city;
+});
 
 function startApp() {
-  axios
-    .get(url)
+  axios;
+  fetchUser()
     .then(function (response) {
-      // console.log(response);
       user = response.data;
-      console.log(user);
       username.innerText = user.name;
-      console.log(username);
+      email.innerText = user.email;
+      address.innerText = user.address.city;
       // TODO: 이름, 이메일, 주소 표시하기
     })
     .catch(function (error) {
