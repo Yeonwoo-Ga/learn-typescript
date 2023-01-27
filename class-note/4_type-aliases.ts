@@ -1,12 +1,12 @@
-interface Person1 {
-    name : string;
-    age : number;
-}
-
-// type Person1 = {
+// interface Person1 {
 //     name : string;
 //     age : number;
 // }
+
+type Person1 = {
+    name : string;
+    age : number;
+}
 
 let inho : Person1 = {
     name : 'inho',
